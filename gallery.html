@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="bs5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="dist/css/lightbox.min.css">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<title>Galéria</title>
+</head>
+<body class="bg-dark">
+    <div class="modal fade" id="modalForm" aria-labelledby="modalneokno" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header bg-dark text-dark">
+        <h5 class="modal-title" id="modalneokno">Prihlásenie na testovaciu jazdu</h5>
+        <button type="button" class="btn-close bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form method="get" action="#">
+        <div class="mb-3">
+          <label class="form-label required">Meno</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Meno" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label required">Priezvisko</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Priezvisko" required>
+        </div>
+        <div class="mb-3">
+        <label class="form-label required">E-mail </label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+        </div>
+        <label class="form-label required">Telefón</label>
+        <div class="input-group mb-3">
+        <div class="input-group-text p-0">    
+          <select class="form-select submitbtn border-0 ">
+            <option value="+421">+421</option>
+            <option value="+420">+420</option>
+            </select>
+        </div>
+        <input type="tel" class="form-control" placeholder="Telefón" pattern="[0-9]{9}" name="tel" id="tel" required>
+        </div>
+        <label class="form-label required">Autorizovaný predajca</label>
+        <input List="select" class="form-control" placeholder="Lokalita predajcu" name="select" required>
+        <datalist id="select">
+           <option value="Východná 19C, 080 01 Prešov"></option>
+           <option value="Moldavská cesta 28, 040 01 Košice"></option>
+           <option value="BADÍN 3, 976 32 Badín"></option>
+           <option value="Predmestská 90, 010 01 Žilina"></option>
+           <option value="Nimnická cesta 1674, 020 01 Púchov"></option>
+           <option value="Bratislavská 1328, 911 05 Trenčín"></option>
+           <option value="Drázovská cesta 5, 949 01 Nitra"></option>
+           <option value="Novozámocká cesta 3946, 945 01 Komárno"></option>
+           <option value="Nitrianska 25, 917 01 Trnava"></option>
+           <option value="Vajnorská 167, 831 04 Bratislava"></option>
+           <option value="Panónska cesta 33, 851 04 Bratislava"></option>
+        </datalist>
+    
+        <div class="mb-3 d-flex flex-column">
+          <label class="form-label required">Výber predvádzacieho auta</label>
+          <select class="form-select" required>
+            <option value="">Model auta</option>
+            <option value="Mazda MX-30">Mazda MX-30</option>
+            <option value="Mazda2">Mazda2</option>
+            <option value="Mazda3">Mazda3</option>
+            <option value="Mazda6">Mazda6</option>
+            <option value="Mazda CX-3">Mazda CX-3</option>
+            <option value="Mazda CX-30">Mazda CX-30</option>
+            <option value="Mazda CX-5">Mazda CX-5</option>
+            <option value="Mazda MX-5 roadster">Mazda MX-5 roadster</option>
+            <option value="Mazda MX-5 RF">Mazda MX-5 RF</option>
+            </select>
+        </div>
+        
+        <div>
+            <label class="form-label required">Dátum rezervácie jazdy</label>
+            <input class="form-control" type="date" id="start" name="date" min="2021-12-06" required >
+        </div>
+        <div class="mb-3">
+          <label class="form-label required">Scan vodičského preukazu</label>
+          <input type="file" id="myFile" name="filename" required>
+        </div>
+        <div style="margin-top: 20px;"> 
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+            <label class="form-check-label required" >Súhlasím so spracovaním dát</label>
+        </div>   
+        
+        <div class="modal-footer d-block">
+        <button type="submit" class="btn bg-white submitbtn float-end">Odoslať</button>
+        </div>
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark pxn20">
+          <div class="container-fluid">
+            <a href="index.html" class="mx-5 py-2" ><img src="images/logo.png" alt="logo" width="75px" height="auto"></a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-lg-flex flex-column align-items-end" id="navbarNavAltMarkup">
+              <div class="navbar-nav smalltext">
+                <a class="mx-2 py-2 text-dark text-decoration-none" href="https://www.mazda.sk/formulare/raq-overview-page/ziadost-o-ponuku/"><i class="bi bi-percent"></i>⠀ŽIADOSŤ O PONUKU</a>
+                  <button type="button" class="btn bg-dark text-dark mt-0 text-start px-2 smalltext" data-bs-toggle="modal" data-bs-target="#modalForm"><i class="bi bi-geo-alt"></i>
+                    TESTOVACIA JAZDA</i></button>
+                  <a class="mx-2 py-2 text-dark text-decoration-none " href="https://www.mazda.sk/konfigurator/"><i class="bi bi-bezier"></i>⠀KONFIGURÁTOR</a>
+                  <a class="mx-2 py-2 text-dark text-decoration-none" href="https://www.mazda.sk/formulare/cenniky-brozury/"><i class="bi bi-tag"></i>⠀CENNÍKY</a>
+              </div>
+              <div class="line d-block d-lg-none bg-light"></div>
+              <div class="navbar-nav">
+                <a href="index.html" class="mx-lg-4 mx-2 py-2 text-dark text-decoration-none">MAZDA</a>
+                <a href="gallery.html" class="mx-lg-4 mx-2 py-2 text-white text-decoration-none ">GALÉRIA</a>                  
+                  <a href="https://www.mazda.sk/servis-a-prislusenstvo/" class="mx-lg-4 mx-2 py-2 text-dark text-decoration-none">SERVIS A PRÍSLUŠENSTVO</a>
+                  <a href="https://www.mazda.sk/o-nas/" class="mx-lg-4 mx-2 py-2 text-dark text-decoration-none">O NÁS</a>
+                  <a href="https://www.mazda.sk/skladove-vozidla/" class="mx-lg-4 mx-2 py-2 text-dark text-decoration-none">SKLADOVÉ VOZIDLÁ</a>
+                  <a href="https://www.mazda.sk/formulare/predajcovia-a-servis/" class="me-lg-2 mx-2 py-2 text-dark text-decoration-none">PREDAJCOVIA A SERVIS</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+    <section class="wall">        
+        <div class=" row row-cols-xl-3 row-cols-lg-2 row-cols-md-1 row-cols-1 position-relative">
+            <div class="col imgtitle">
+                 <a class="" href="images/gallery/2.jpg" data-lightbox="set" data-title="Mazda2"><img src="images/gallery/2.jpg" alt="mazda2"/></a>
+                 <h1 class="content">Mazda2</h1>                         
+            </div>
+            <div class="col imgtitle">
+                <a href="images/gallery/3.jpg" data-lightbox="set" data-title="Mazda3"><img src="images/gallery/3.jpg" alt="mazda3" /></a>
+                <h1 class="content">Mazda3</h1>                         
+           </div>
+           <div class="col imgtitle">
+                 <a href="images/gallery/6.jpg" data-lightbox="set" data-title="Mazda6"><img src="images/gallery/6.jpg" alt="mazda6"/></a>
+                 <h1 class="content">Mazda6</h1>                         
+            </div>   
+            <div class="col imgtitle">
+              <a href="images/gallery/cx3.jpg" data-lightbox="set" data-title="Mazda CX3"><img src="images/gallery/cx3.jpg" alt="mazda cx3"/></a>
+              <h1 class="content">Mazda CX-3</h1>                         
+          </div>
+          <div class="col imgtitle">
+              <a href="images/gallery/cx5.jpg" data-lightbox="set" data-title="Mazda CX5"><img src="images/gallery/cx5.jpg" alt="mazda cx5" /></a>
+              <h1 class="content">Mazda CX-5</h1>                         
+         </div>
+         <div class="col imgtitle">
+          <a href="images/gallery/cx8.jpg" data-lightbox="set" data-title="Mazda CX8"><img src="images/gallery/cx8.jpg" alt="mazda cx8"/></a>
+               <h1 class="content">Mazda CX-8</h1>                         
+          </div>  
+          <div class="col imgtitle">
+            <a href="images/gallery/cx9.jpg" data-lightbox="set" data-title="Mazda CX9"><img src="images/gallery/cx9.jpg" alt="mazda cx9"/></a>
+            <h1 class="content">Mazda CX-9</h1>                         
+        </div>
+        <div class="col imgtitle">
+            <a href="images/gallery/cx30.jpg" data-lightbox="set" data-title="Mazda CX30"><img src="images/gallery/cx30.jpg" alt="mazda cx30" /></a>
+            <h1 class="content">Mazda CX-30</h1>                         
+       </div>
+       <div class="col imgtitle">
+        <a href="images/gallery/bt50.jpg" data-lightbox="set" data-title="Mazda BT50"><img src="images/gallery/bt50.jpg" alt="mazda bt50"/></a>
+             <h1 class="content">Mazda BT-50</h1>                         
+        </div> 
+        <div class="col imgtitle">
+          <a href="images/gallery/mx5 r.jpg" data-lightbox="set" data-title="Mazda MX5 ROADSTER"><img src="images/gallery/mx5 r.jpg" alt="mazda mx5r"/></a>
+          <h1 class="content">Mazda MX-5 ROADSTER</h1>                         
+      </div>
+      <div class="col imgtitle">
+          <a href="images/gallery/mx5 rf.jpg" data-lightbox="set" data-title="Mazda MX5 RF"><img src="images/gallery/mx5 rf.jpg" alt="mazda mx5rf" /></a>
+          <h1 class="content">Mazda MX-5 RF</h1>                         
+     </div>
+     <div class="col imgtitle">
+      <a href="images/gallery/mx30.jpg" data-lightbox="set" data-title="Mazda MX30"><img src="images/gallery/mx30.jpg" alt="mazda mx30"/></a>
+           <h1 class="content">Mazda MX-30</h1>                         
+      </div>
+        </div>
+               
+      </section>
+      <footer class="bg-dark m-0 p-3 text-center">
+        <p class="m-0 text-dark">Informácie boli čerpané z oficiálnej stránky <a class="text-dark" target="_blank" href="https://www.mazda.sk/">mazda.sk</a></p>
+       </footer>      
+    
+    <script src="dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src="bs5/js/bootstrap.min.js"></script>
+</body>
+</html>

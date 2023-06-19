@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="bs5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<title>MAZDASlovakia</title>
+</head>
+<body class="bg-white">
+
+  <div class="modal fade" id="modalForm" aria-labelledby="modalneokno" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header bg-dark text-dark">
+    <h5 class="modal-title" id="modalneokno">Prihlásenie na testovaciu jazdu</h5>
+    <button type="button" class="btn-close bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    <form method="get" action="#">
+    <div class="mb-3">
+      <label class="form-label required">Meno</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Meno" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label required">Priezvisko</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Priezvisko" required>
+    </div>
+    <div class="mb-3">
+    <label class="form-label required">E-mail </label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+    </div>
+    <label class="form-label required">Telefón</label>
+    <div class="input-group mb-3">
+    <div class="input-group-text p-0">    
+      <select class="form-select submitbtn border-0 ">
+        <option value="+421">+421</option>
+        <option value="+420">+420</option>
+        </select>
+    </div>
+    <input type="tel" class="form-control" placeholder="Telefón" pattern="[0-9]{9}" name="tel" id="tel" required>
+    </div>
+    <label class="form-label required">Autorizovaný predajca</label>
+    <input List="select" class="form-control" placeholder="Lokalita predajcu" name="select" required>
+    <datalist id="select">
+       <option value="Východná 19C, 080 01 Prešov"></option>
+       <option value="Moldavská cesta 28, 040 01 Košice"></option>
+       <option value="BADÍN 3, 976 32 Badín"></option>
+       <option value="Predmestská 90, 010 01 Žilina"></option>
+       <option value="Nimnická cesta 1674, 020 01 Púchov"></option>
+       <option value="Bratislavská 1328, 911 05 Trenčín"></option>
+       <option value="Drázovská cesta 5, 949 01 Nitra"></option>
+       <option value="Novozámocká cesta 3946, 945 01 Komárno"></option>
+       <option value="Nitrianska 25, 917 01 Trnava"></option>
+       <option value="Vajnorská 167, 831 04 Bratislava"></option>
+       <option value="Panónska cesta 33, 851 04 Bratislava"></option>
+    </datalist>
+
+    <div class="mb-3 d-flex flex-column">
+      <label class="form-label required">Výber predvádzacieho auta</label>
+      <select class="form-select" required>
+        <option value="">Model auta</option>
+        <option value="Mazda MX-30">Mazda MX-30</option>
+        <option value="Mazda2">Mazda2</option>
+        <option value="Mazda3">Mazda3</option>
+        <option value="Mazda6">Mazda6</option>
+        <option value="Mazda CX-3">Mazda CX-3</option>
+        <option value="Mazda CX-30">Mazda CX-30</option>
+        <option value="Mazda CX-5">Mazda CX-5</option>
+        <option value="Mazda MX-5 roadster">Mazda MX-5 roadster</option>
+        <option value="Mazda MX-5 RF">Mazda MX-5 RF</option>
+        </select>
+    </div>
+    
+    <div>
+        <label class="form-label required">Dátum rezervácie jazdy</label>
+        <input class="form-control" type="date" id="start" name="date" min="2021-12-06" required >
+    </div>
+    <div class="mb-3">
+      <label class="form-label required">Scan vodičského preukazu</label>
+      <input type="file" id="myFile" name="filename" required>
+    </div>
+    <div style="margin-top: 20px;"> 
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+        <label class="form-check-label required" >Súhlasím so spracovaním dát</label>
+    </div>   
+    
+    <div class="modal-footer d-block">
+    <button type="submit" class="btn bg-white submitbtn float-end">Odoslať</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="wrapper d-none d-md-block">
+      <ul> 
+        <a href="https://www.mazda.sk/konfigurator/">
+        <li class="">
+          <i class="fa bi bi-bezier"></i>
+          <div class="slider">
+            <p class="text-uppercase ">nakonfigurujte si svoju mazdu</p>
+          </div>
+      </li></a>
+        
+      <a data-bs-toggle="modal" data-bs-target="#modalForm">
+        <li class="">
+          <i class="fa bi bi-geo-alt"></i>
+          <div class="slider">
+            <p class="text-uppercase ">rezervovať testovaciu jazdu</p>
+          </div>
+        </li></a>
+        <a href="https://www.mazda.sk/formulare/raq-overview-page/ziadost-o-ponuku/">
+        <li class="">
+          <i class="fa bi bi-percent"></i>
+          <div class="slider">
+            <p class="text-uppercase ">žiadosť o ponuku</p>
+          </div>
+        </li></a>
+        <a href="https://www.mazda.sk/formulare/cenniky-brozury/">
+        <li class="">          
+          <i class="fa bi bi-tag"></i>
+          <div class="slider">
+            <p class="text-uppercase ">cenníky</p>
+          </div>
+        </li></a>   
+        
+      </ul>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark pxn20">
+      <div class="container-fluid">
+        <a href="index.html" class="mx-5 py-2" ><img src="images/logo.png" alt="logo" width="75px" height="auto"></a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-lg-flex flex-column align-items-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav smalltext">
+            <a class="mx-2 py-2 text-dark text-decoration-none" href="https://www.mazda.sk/formulare/raq-overview-page/ziadost-o-ponuku/"><i class="bi bi-percent"></i>⠀ŽIADOSŤ O PONUKU</a>
+              <button type="button" class="btn bg-dark text-dark mt-0 text-start px-2 smalltext" data-bs-toggle="modal" data-bs-target="#modalForm"><i class="bi bi-geo-alt"></i>
+                TESTOVACIA JAZDA</i></button>
+              <a class="mx-2 py-2 text-dark text-decoration-none " href="https://www.mazda.sk/konfigurator/"><i class="bi bi-bezier"></i>⠀KONFIGURÁTOR</a>
+              <a class="mx-2 py-2 text-dark text-decoration-none" href="https://www.mazda.sk/formulare/cenniky-brozury/"><i class="bi bi-tag"></i>⠀CENNÍKY</a>
+          </div>
+          <div class="line d-block d-lg-none bg-light"></div>
+          <div class="navbar-nav">
+            <a href="index.html" class="mx-lg-4 mx-2 py-2 text-white text-decoration-none">MAZDA</a>
+            <a href="gallery.html" class="mx-lg-4 mx-2 py-2 text-dark text-decoration-none">GALÉRIA</a>              
+              <a href="https://www.mazda.sk/servis-a-prislusenstvo/" class="mx-lg-4 mx-2 py-2 text-dark text-decoration-none">SERVIS A PRÍSLUŠENSTVO</a>
+              <a href="https://www.mazda.sk/o-nas/" class="mx-lg-4 mx-2 py-2 text-dark text-decoration-none">O NÁS</a>
+              <a href="https://www.mazda.sk/skladove-vozidla/" class="mx-lg-4 mx-2 py-2 text-dark text-decoration-none">SKLADOVÉ VOZIDLÁ</a>
+              <a href="https://www.mazda.sk/formulare/predajcovia-a-servis/" class="me-lg-2 mx-2 py-2 text-dark text-decoration-none">PREDAJCOVIA A SERVIS</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <div class=" text-center carousel-item active c4 imgbg d-flex flex-column align-items-center justify-content-top pt20  text-white">        
+        <div class="">
+          <h1>MAZDA MX-5. ELEGANTNÝ VZHĽAD,</h1>
+          <h1>VZRUŠUJÚCI POCIT.</h1>  
+        </div>  
+        <div class="my-4">
+          <a href="https://www.mazda.sk/konfigurator/MAZDA%20MX-5/2DR.OPEN/" class="p-3 bg-white text-decoration-none min text-center rounded-2" >NAKONFIGUROVAŤ</a>
+          <a href="https://www.mazda.sk/formulare/raq-overview-page/ziadost-o-ponuku/?model=mazda%20mx-5" class="p-3 bg-white text-decoration-none min text-center rounded-2" >ŽIADOSŤ O PONUKU</a>
+        </div>             
+        </div>
+      <div class="text-center carousel-item">        
+        <div class="c1 imgbg d-flex flex-column align-items-center justify-content-top pt20  text-white">
+          <h2>NAVRHNUTÁ K INŠPIRÁCII NA CESTU V PRED</h2>
+          <h1>MAZDA CX-30 2022</h1>
+          <a href="https://www.mazda.sk/modely/mazda-cx-30/" class="p-3 bg-white text-decoration-none min text-center rounded-2" >PRESKÚMAJTE JU TERAZ</a>
+        </div>
+        
+      </div>
+      <div class="text-center carousel-item">
+        <div class="c2 imgbg d-flex flex-column align-items-center justify-content-top pt20  text-white">
+          <h2>PRICHÁZDA MAZDA2 HYBRID</h2>
+          <h1>STE PRIPRAVENÝ NA NIEČO NOVÉ?</h1>
+          <a href="https://www.mazda.sk/mazda2-hybrid-uz-coskoro/" class="text-white text-decoration-none borderbottom" >VIAC INFORMÁCIÍ</a>
+        </div>
+      </div>
+      
+      <div class="text-center carousel-item">
+        <div class="c3 imgbg d-flex flex-column align-items-center justify-content-top pt20 text-white">
+          <h2>DOKONALÉ RODINNÉ SUV: UŠITÉ NA MIERU PRE VÁS </h2>
+          <h1>MAZDA CX-5 2022</h1>
+          <a href="https://www.mazda.sk/modely/mazda-cx-5/" class="p-3 bg-white text-decoration-none min text-center rounded-2" >OBJAVTE VIAC</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="text-center py1060 bg-white">
+    <p>Vážení zákazníci,</p><bt></bt>
+    <p>keďže našou hlavnou prioritou je ochrana zdravia a osobná pohoda tak ako vaša, tak i našich zamestnancov, rešpektujeme samozrejme všetky úradmi vydané odporúčania.</p>
+    <br><p>(Aktualizácia ku dňu 25.11.2021)
+      Z rozhodnutia Vlády Slovenskej republiky v tejto chvíli pracujú všetky autorizované dílerstvá a servisy značky Mazda na Slovensku v obmedzenom režime podľa platných nariadení. Naše servisné pracoviská sú vám k dispozícii k servisným výkonom na vašich vozidlách a k nákupom náhradných dielov a príslušenstva. To všetko samozrejme pri rešpektovaní hygienických opatrení.</p>
+    <br><p>Naši predajcovia Mazda sú vám naďalej plne k dispozícii prostredníctvom telefónu a emailu. Kontaktovať ich môžete prostredníctvom vyhľadávača tu.</p>
+  </div>
+  <div class="bg-light text-center py1030 ">
+  <h4>MAZDA PLÁNUJE PREDSTAVENIE ORIGINÁLNEHO PLUG-IN HYBRIDU NA EURÓPSKOM TRHU</h4>
+  <br><h1>NOVÁ MAZDA CX-60</h1>
+  <br><p>Prvý plug-in hybrid značky Mazda v triede SUV na európskom trhu – úplne nový model CX-60 – bude vybavený vyspelým elektromotorom, mimoriadne šetrným k životnému prostrediu, a zároveň benzínovým štvorvalcom kvôli dlhšiemu dojazdu a pohodliu vodiča. Pripravte sa na novú, elektrifikovanú generáciu Jinba Ittai, ktorá urobí z riadenia vozidla skvelý zážitok v meste aj v teréne.</p>
+  <br><br><a href="https://www.mazda.sk/formulare/bulletinu/" ><button class="p-3 min width text-white bg-dark border-0 mb-lg-0 mb-4" >PRIHLÁSTE SA K ODBERU NEWSLETTERA</button></a>
+  <a href="https://www.mazda.sk/o-nas/novinky-a-udalosti/novinky/2021-10-7-nazvy-modelu-suv/" ><button class="p-3 min width text-white bg-dark border-0" >PREČÍTAJTE SI TLAČOVÚ SPRÁVU</button></a>
+  </div>
+
+  <div class="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-1" style="width: 100%; margin-left: 0px;">
+    <div class="col bg-info text-center">
+      <div class="overflow-hidden"><div class="imgbg g1"></div></div>      
+      <div class="py1020 borderg">
+        <h4>REVOLUČNÝ MOTOR E-SKYACTIV X</h4><br>
+        <p>e-Skyactiv X je nový typ spaľovacieho motora, ktorý dosahuje špičkové ekologické parametre bez obmedzení na výkone motora.</p>
+      </div>
+    </div>
+    <div class="col bg-info text-center">
+      <div class="overflow-hidden"><div class="imgbg g2"></div></div>      
+      <div class="py1020 borderg">
+        <h4>AKCIA ŠTEDRÁ JESEŇ</h4><br>
+        <p>Aj jeseň môže byť štedrá. Modely Mazda s mnohými benefitmi so zvýhodnením až 4 321 €.</p>
+      </div>
+    </div>
+    <div class="col bg-info text-center">
+      <div class="overflow-hidden"><div class="imgbg g3"></div></div>      
+      <div class="py1020">
+        <h4>ZIMNÁ SERVISNÁ KONTROLA</h4><br>
+        <p>Nečakajte na prvý sneh.
+          Zimná servisná kontrola Vašej Mazdy len za 11,99 €.</p>
+      </div>
+    </div>  
+    <div class="col bg-info text-center">
+      <div class="overflow-hidden"><div class="imgbg g4"></div></div>      
+      <div class="py1020 borderg">
+        <h4>MAZDA IHNEĎ - PONUKA VOZIDIEL MAZDA</h4><br>
+        <p>Pozrite sa na vozidlá Mazda dostupné ihneď. Vozidlá z celého Slovenska na jednom mieste. Skladové vozidlá, predvádzacie vozidlá ale i ojazdené.</p>
+      </div>
+    </div>
+    <div class="col bg-info text-center">
+      <div class="overflow-hidden"><div class="imgbg g5"></div></div>      
+      <div class="py1020 borderg">
+        <h4>BONUS ZA VÝKUP VOZIDLA</h4><br>
+        <p>Pri nákupe novej Mazdy, sa postárame o vaše súčasné vozidlo. A naviac získate od nás zaujimavý bonus 1 200 €.</p>
+      </div>
+    </div>
+    <div class="col text-center bg-info">
+      <div class="overflow-hidden"><div class="imgbg g6"></div></div>      
+      <div class="py1020">
+        <h4>PRICHÁDZA MAZDA2 HYBRID</h4><br>
+        <p>STE PRIPRAVENÝ NA NIEČO NOVÉ?</p>
+      </div>
+    </div>
+  </div>
+  <div class="py1060 bg-white" style="padding-bottom: 0 !important;">
+    <p>ZAČIATOK VEĽKÉHO DOBRODRUŽŠTVA</p><br>
+    <p>Keď riadite Mazdu, vyčaruje sa vám pri každej jazde na tvári spokojný úsmev. Naše vozidlá toho poskytnú oveľa viac než len prepravu z bodu A do bodu B. Sú navrhnuté a vyrobené pre maximálny pôžitok z jazdy. Hovoríme tomu Jinba Ittaj, spojenie medzi vami a vozidlom. Tak ako je tomu medzi koňom a jazdcom.</p>
+  </div>
+  <div class="viddiv">
+    <video autoplay muted loop id="myVideo">
+      <source src="images/VIDEO.mp4" type="video/mp4">      
+    </video>
+    <div class="hero-text text-center position-absolute text-white">
+      <h3 class="d-none d-lg-block">VYTVORTE SI SVOJU IDEÁLNU MAZDA</h3>
+      <h1>VYTVORTE SI VLASTNÚ</h1>      
+      <a href="" class="text-white text-decoration-none borderbottom" style="font-size: 16PX;" >MÔŽEME ZAČAŤ</a>
+    </div>
+  </div>
+  <div class="pt0 bg-info" style="margin-top: -60px;">
+    <p>PRIHLÁSIŤ SA NA ODBER NOVINIEK</p><br>
+    <p>Zadajte svoje kontaktné údaje a získajte od nás najnovšie správy. Budete dostávať horúcé novinky zo sveta Mazdy.</p>
+    <br><br><a href="" ><button class="p-3 min rounded-2 text-white bg-dark border-0" >PRIHLÁSIŤ SA</button></a>
+  </div>
+  <div class="row" style="width: 100%; margin-left: 0px;">
+    <div class="col-md-6  col-12 text-center bg-info">
+      <div class="overflow-hidden "><div class="imgbg o1" ></div></div>      
+      <div class="py1010 bordero" style="height: 175px !important;">
+        <h4>REKLAMNÉ PREDMETY</h4>
+        <p>Nová kolekcia darčekových predmetov Mazda je tu. Či už si zvolíte šál, hrnček, batoh alebo ešte niečo úplne iné, jedno je isté – kde je logo Mazda, tam je aj jej charakter.</p>
+      </div>
+    </div>
+    <div class="col-md-6  col-12 text-center bg-info">
+      <div class="overflow-hidden "><div class="imgbg o2" ></div></div>      
+      <div class="py1010" style="height: 175px !important;">
+        <h4>MOŽNOSTI FINANCOVANIA MAZDA</h4>
+        <p>Flexibilné podmienky podľa vašich potrieb</p>
+      </div>
+    </div>
+  </div>
+  <div class="imgbg h1 m-0">
+    <div class="hero-text text-center position-absolute text-white">
+      <h3>INTELIGENTNÉ PRÍSLUŠENSTVO PRE RADOSŤ Z JAZDY</h3>
+      <h1>ORIGINÁLNE PRÍSLUŠENSTVO MAZDA</h1>      
+      <a href="https://www.mazda.sk/servis-a-prislusenstvo/prislusenstvo/" class="text-white text-decoration-none borderbottom" style="font-size: 16PX;" >ZISTIŤ VIAC</a>
+    </div>
+  </div>
+  <div class="py1040 bg-white">
+    <p>Zobrazený model nemusí zodpovedať špecifikácii pre slovenský trh. Farby a niektoré prvky exteriéru a/alebo interiéru sa na obrazovke môžu líšiť od skutočného modelu.</p><br>
+    <p>Všetky ceny sú koncové v € s DPH. Ceny sú uvedené vrátane dopravy k predajcovi. Výrobca si vyhradzuje právo na zmeny cien a štandardnej výbavy bez predchádzajúceho upozornenia.</p>
+  </div>
+  <div class="row bg-info">
+    <div class="col-lg-6 col-12 d-flex flex-column justify-content-center my-5" style="padding: 0 10% !important;">
+      <h2 class="text-uppercase ">Spoločnosť Mazda uvádza na trh prvý plne hybridný model</h2>
+      <p class="text-uppercase ">Nová Mazda2 Hybrid, ktorá sa začne predávať od jari 2022 v celej Európe, po prvýkrát prináša do modelového radu vozidiel Mazda technológiu plne hybridnej hnacej sústavy.</p>
+      <a href="https://www.mazda.sk/o-nas/novinky-a-udalosti/novinky/2021-12-6-m2-full-hybrid/"><button class="submitbtn" style="width: 33%;">Čítať viac</button>
+      </a>
+    </div>
+    <div class="col-lg-6 col-12 d-lg-block d-none">
+      <img height="300px" width="auto" src="images/gallery/b1.jpg" alt="mazda2">
+    </div>
+  </div>
+  <div class="row bg-white">
+    <div class="col-lg-6 col-12 d-flex justify-content-end d-lg-flex d-none">
+      <img height="300px" width="auto" src="images/gallery/b2.jpg" alt="mazda2">
+    </div>    
+    <div class="col-lg-6 col-12 d-flex flex-column justify-content-center my-5" style="padding: 0 10% !important;">
+      <h2 class="text-uppercase">Úplne nový kompaktný crossover CX-50</h2>
+      <p class="text-uppercase">Spoločnosť Mazda North America Operations predstavuje premiéru prvého modelu z novej továrne v Alabame, Mazdu CX-50</p>
+      <a href="https://www.mazda.sk/o-nas/novinky-a-udalosti/novinky/2021-11-16-cx-50-usa-predstaveni/"><button class="submitbtn bg-white" style="width: 33%;">Čítať viac</button>
+      </a>
+    </div>
+  </div>  
+  <div class="row bg-info">
+    <div class="col-lg-6 col-12 d-flex flex-column justify-content-center my-lg-0 my-5" style="padding: 0 10% !important;">
+      <h2 class="text-uppercase ">Mazda CX-5 2022: Dokonalejšia prepracovanosť a nová kategorizácia tried</h2>
+      <p class="text-uppercase ">Voľba jazdného režimu, vylepšené jazdné vlastnosti a zníženie prevádzkovej hlučnosti. Bohatšia výbava a rozšírená škála bezpečnostných technológií.</p>
+      <a href="https://www.mazda.sk/o-nas/novinky-a-udalosti/novinky/2021-09-14-cx5/"><button class="submitbtn" style="width: 33%;">Čítať viac</button>
+      </a>
+    </div>
+    <div class="col-lg-6 col-12 d-flex d-lg-block d-none">
+      <img height="300px" width="auto" src="images/gallery/b3.jpg" alt="mazda2">
+    </div>   
+  </div>
+
+
+
+  <footer class="bg-dark m-0 p-3 text-center">
+    <p class="m-0 text-dark">Informácie boli čerpané z oficiálnej stránky <a class="text-dark" target="_blank" href="https://www.mazda.sk/">mazda.sk</a></p>
+   </footer>
+  
+  
+<script src="bs5/js/bootstrap.min.js"></script>
+</body>
+</html>
